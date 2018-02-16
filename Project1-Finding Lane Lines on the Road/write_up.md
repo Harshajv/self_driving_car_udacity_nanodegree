@@ -31,12 +31,13 @@ My pipeline consisted of 5 steps. First, I converted the images to grayscale, th
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming is the last step of the algorithm should be optimized
+One potential shortcoming is the last step of the algorithm should be optimized. the lines are still shaking.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to change the last lane detection draw algorithm to improve the accuracy.
+also how to calculate the average slope is the problem, It's likely I haven't got the most important point of how to correct calculate the average value of slope 
 
 
 
