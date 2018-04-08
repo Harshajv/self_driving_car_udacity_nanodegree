@@ -96,6 +96,14 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/BirdEye_comparison.png)
 
+and after binarization:
+
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/birdeye_binary_comparison.png)
+
+and the curve lines perspective transformation results for detection:
+
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/birdeye_for_line_detection.png)
+
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
