@@ -35,6 +35,8 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/find_corners.png)
 
+
+
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/after_undistortion.png)
 ### Pipeline (single images)
 
@@ -49,10 +51,17 @@ I used a combination of color and gradient thresholds to generate a binary image
 Setp 1: I calculate all the four different sobel mask from the lecture, Gradx,Grady,mag_gradient, dir_gradient, Here I visualize the four different gradient threshold.
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/sobel_threshhold_comparison.png)
 
-Step 2: Color mask: I change the original color space RGB into HSL. Extract yellow lines and white lines respectively, and then combine them together.
+Step 2: Color mask: I change the original color space RGB into HSL. Extract yellow lines and white lines respectively
+
+
+Here is the example output of yellow_mask
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/yellow_mask.png)
+
+and here is the example output of white_mask
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/white_mask.png)
-![image]()
+
+Output of final combined mask:
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/final_mask_for_test5.png)
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
