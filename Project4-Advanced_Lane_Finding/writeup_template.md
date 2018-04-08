@@ -133,9 +133,45 @@ My method is for the first frame for detected, use the sliding window to detect 
 
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/sliding_windows_example_output.png)
 
+and for other frames the detection should be based on the first frame, as introduced in lecture.
+
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+I did this in lines # through # in my code in `lane_detection.py` and `image_processing_pipeline.py`
+
+```python
+
+   def curvature(self):
+        y_eval = 0
+        coeffs = self.average_fit
+        return ((1 + (2 * coeffs[0] * y_eval + coeffs[1]) ** 2) ** 1.5) / np.absolute(2 * coeffs[0])
+
+    # radius of curvature of the line (averaged)
+    def curvature_meter(self):
+        y_eval = 0
+        coeffs = np.mean(self.recent_fits_meter, axis=0)
+        return ((1 + (2 * coeffs[0] * y_eval + coeffs[1]) ** 2) ** 1.5) / np.absolute(2 * coeffs[0])
+```
+
+
+```python
+
+def compute_offset_from_center(line_lt, line_rt, frame_width):
+    if line_lt.detected and line_rt.detected:
+        line_lt_bottom = np.mean(line_lt.all_x[line_lt.all_y > 0.95 * line_lt.all_y.max()])
+        line_rt_bottom = np.mean(line_rt.all_x[line_rt.all_y > 0.95 * line_rt.all_y.max()])
+        lane_width = line_rt_bottom - line_lt_bottom
+        midpoint = frame_width / 2
+        offset_pix = abs((line_lt_bottom + lane_width / 2) - midpoint)
+        offset_meter = xm_per_pix * offset_pix
+    else:
+        offset_meter = -1
+    
+    return offset_meter
+
+```
+
+
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
