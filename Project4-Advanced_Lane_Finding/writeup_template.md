@@ -108,7 +108,30 @@ and the curve lines perspective transformation results for detection:
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
-![alt text][image5]
+I define the Line() class in `lane_detection.py`
+
+```python
+
+class Line:
+    """
+    Class to model a lane-line.
+    """
+    def __init__(self, buffer_len=10):
+
+        # flag to mark if the line was detected the last iteration
+        self.detected = False
+
+     ...
+     ...
+     ...
+     
+
+
+```
+
+My method is for the first frame for detected, use the sliding window to detect the lane lines, and there is an example for output of sliding_windows detection
+
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/output_images/sliding_windows_example_output.png)
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
