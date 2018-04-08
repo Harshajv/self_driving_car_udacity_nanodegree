@@ -175,11 +175,8 @@ def compute_offset_from_center(line_lt, line_rt, frame_width):
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
-
-![alt text][image6]
-
 ---
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project4-Advanced_Lane_Finding/test_image_after_pipeline/straight_lines1.jpg)
 
 ### Pipeline (video)
 
@@ -189,8 +186,4 @@ Here's a [link to my video result](https://github.com/Harshajv/self_driving_car_
 
 ---
 
-### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
