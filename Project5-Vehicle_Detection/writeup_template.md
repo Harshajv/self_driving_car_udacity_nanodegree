@@ -21,7 +21,7 @@ The goals / steps of this project are the following:
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
 The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `vehicle_detection.ipynb`).
-``python
+```python
 
 def get_hog_features(img, orient, pix_per_cell, cell_per_block,
                         vis=False, feature_vec=True):
@@ -41,8 +41,7 @@ def get_hog_features(img, orient, pix_per_cell, cell_per_block,
                        transform_sqrt=False,
                        visualise=vis, feature_vector=feature_vec)
         return features
-
-``
+```
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
