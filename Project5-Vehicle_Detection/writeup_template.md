@@ -87,6 +87,42 @@ Final Feature is a combination of bin_spatial, hog_feature, color_his:
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
 I trained a linear SVM using feature generated from the last step, concatenate car_feature and nocar_feature together.
+```python
+
+X = np.vstack((car_features, notcar_features)).astype(np.float64)                        
+# Fit a per-column scaler
+X_scaler = StandardScaler().fit(X)
+# Apply the scaler to X
+scaled_X = X_scaler.transform(X)
+
+# Define the labels vector
+y = np.hstack((np.ones(len(car_features)), np.zeros(len(notcar_features))))
+
+# Split up data into randomized training and test sets
+rand_state = np.random.randint(0, 100)
+X_train, X_test, y_train, y_test = train_test_split(
+    scaled_X, y, test_size=0.2, random_state=rand_state)
+
+print('Using:',orient,'orientations',pix_per_cell,
+    'pixels per cell and', cell_per_block,'cells per block')
+print('Feature vector length:', len(X_train[0]))
+# Use a linear SVC
+svc = LinearSVC()
+# Check the training time for the SVC
+t=time.time()
+svc.fit(X_train, y_train)
+t2 = time.time()
+print(round(t2-t, 2), 'Seconds to train SVC...')
+# Check the score of the SVC
+print('Test Accuracy of SVC = ', round(svc.score(X_test, y_test), 4))
+# Check the prediction time for a single sample
+t=time.time()
+
+Using: 15 orientations 8 pixels per cell and 2 cells per block
+Feature vector length: 11988
+36.73 Seconds to train SVC...
+Test Accuracy of SVC =  0.9927
+```
 
 ### Sliding Window Search
 
