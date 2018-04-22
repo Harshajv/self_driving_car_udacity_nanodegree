@@ -45,6 +45,8 @@ def get_hog_features(img, orient, pix_per_cell, cell_per_block,
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/car_notcar.png)
+
 ![alt text][image1]
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
