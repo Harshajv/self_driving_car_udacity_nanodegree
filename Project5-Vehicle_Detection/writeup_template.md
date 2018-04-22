@@ -80,28 +80,50 @@ Channel2:
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/hog_feature_ch3.png)
 
 
-
+Final Feature is a combination of bin_spatial, hog_feature, color_his:
 
 
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+I trained a linear SVM using feature generated from the last step, concatenate car_feature and nocar_feature together.
 
 ### Sliding Window Search
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+```python
 
-![alt text][image3]
+def find_cars(img, ystart, ystop, scale, svc, X_scaler, orient, pix_per_cell, cell_per_block, spatial_size, hist_bins):
+
+def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spatial_size, hist_bins):
+```
+
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+Initial Boundingbox:
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/initial_bbox.png)
 
-![alt text][image4]
----
+Add Heatmap:
+
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/add_heatmap.png)
+
+Then Label image
+
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/labeled_image.png)
+
+Final detected image
+
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/detected_image.png)
+
+
+
+
+
+
+
+
 
 ### Video Implementation
 
