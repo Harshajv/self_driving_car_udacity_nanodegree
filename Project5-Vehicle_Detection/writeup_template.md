@@ -65,6 +65,23 @@ Noncar:
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
+get hog feature with original color space 
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/hog_features.png)
+
+Channel0:
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/hog_feature_ch1.png)
+
+Channel1:
+
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/hog_feature_ch2.png)
+
+Channel2:
+
+![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/hog_feature_ch3.png)
+
+
+
+
 
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
