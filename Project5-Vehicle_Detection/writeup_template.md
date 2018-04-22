@@ -103,6 +103,7 @@ def apply_sliding_window(image, svc, X_scaler, pix_per_cell, cell_per_block, spa
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 Initial Boundingbox:
+
 ![image](https://github.com/Harshajv/self_driving_car_udacity_nanodegree/blob/master/Project5-Vehicle_Detection/output_image/initial_bbox.png)
 
 Add Heatmap:
